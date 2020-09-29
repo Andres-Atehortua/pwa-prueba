@@ -36,7 +36,7 @@ self.addEventListener('install', (e) => {
     .open(INMUTABLE_CACHE)
     .then((cache) => cache.addAll(APP_SHELL_INMUTABLE));
 
-  e.waitUntil(Promise.all([staticCache, inmutableCache]));
+  e.waitUntil(staticCache, inmutableCache);
 });
 
 self.addEventListener('activate', (e) => {
