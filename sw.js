@@ -7,16 +7,16 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 
 const APP_SHELL = [
   // '/', // En desarrollo
-  'index.html',
-  '/css/style.css',
-  '/img/favicon.ico',
-  '/img/avatars/spiderman.jpg',
-  '/img/avatars/hulk.jpg',
-  '/img/avatars/wolverine.jpg',
-  '/img/avatars/thor.jpg',
-  '/img/avatars/ironman.jpg',
-  '/js/app.js',
-  '/js/sw-utils.js',
+  '/pwa/index.html',
+  '/pwa/css/style.css',
+  '/pwa/img/favicon.ico',
+  '/pwa/img/avatars/spiderman.jpg',
+  '/pwa/img/avatars/hulk.jpg',
+  '/pwa/img/avatars/wolverine.jpg',
+  '/pwa/img/avatars/thor.jpg',
+  '/pwa/img/avatars/ironman.jpg',
+  '/pwa/js/app.js',
+  '/pwa/js/sw-utils.js',
 ];
 
 const APP_SHELL_INMUTABLE = [
@@ -28,15 +28,13 @@ const APP_SHELL_INMUTABLE = [
 ];
 
 self.addEventListener('install', (e) => {
-  // const staticCache = caches
-  //   .open(STATIC_CACHE)
-  //   .then((cache) => cache.addAll(APP_SHELL))
-  //   .catch(console.warning);
-  // const inmutableCache = caches
-  //   .open(INMUTABLE_CACHE)
-  //   .then((cache) => cache.addAll(APP_SHELL_INMUTABLE))
-  //   .catch(console.warning);
-  // e.waitUntil(Promise.all([staticCache, inmutableCache]));
+  const staticCache = caches
+    .open(STATIC_CACHE)
+    .then((cache) => cache.addAll(APP_SHELL));
+  const inmutableCache = caches
+    .open(INMUTABLE_CACHE)
+    .then((cache) => cache.addAll(APP_SHELL_INMUTABLE));
+  e.waitUntil(Promise.all([staticCache, inmutableCache]));
 });
 
 self.addEventListener('activate', (e) => {
