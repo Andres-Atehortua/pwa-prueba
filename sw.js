@@ -6,7 +6,7 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 
 const APP_SHELL = [
-  '/',
+  // '/', // En desarrollo
   'index.html',
   '/css/style.css',
   '/img/favicon.ico',
