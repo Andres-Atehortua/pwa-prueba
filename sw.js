@@ -7,7 +7,7 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 
 const APP_SHELL = [
   // '/', // En desarrollo
-  '/pwa-prueba/index.html',
+  '/pwa-prueba/',
   '/pwa-prueba/css/style.css',
   '/pwa-prueba/img/favicon.ico',
   '/pwa-prueba/img/avatars/spiderman.jpg',
