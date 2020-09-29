@@ -7,16 +7,16 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 
 const APP_SHELL = [
   // '/', // En desarrollo
-  '/pwa/index.html',
-  '/pwa/css/style.css',
-  '/pwa/img/favicon.ico',
-  '/pwa/img/avatars/spiderman.jpg',
-  '/pwa/img/avatars/hulk.jpg',
-  '/pwa/img/avatars/wolverine.jpg',
-  '/pwa/img/avatars/thor.jpg',
-  '/pwa/img/avatars/ironman.jpg',
-  '/pwa/js/app.js',
-  '/pwa/js/sw-utils.js',
+  '/pwa-prueba/index.html',
+  '/pwa-prueba/css/style.css',
+  '/pwa-prueba/img/favicon.ico',
+  '/pwa-prueba/img/avatars/spiderman.jpg',
+  '/pwa-prueba/img/avatars/hulk.jpg',
+  '/pwa-prueba/img/avatars/wolverine.jpg',
+  '/pwa-prueba/img/avatars/thor.jpg',
+  '/pwa-prueba/img/avatars/ironman.jpg',
+  '/pwa-prueba/js/app.js',
+  '/pwa-prueba/js/sw-utils.js',
 ];
 
 const APP_SHELL_INMUTABLE = [
