@@ -1,27 +1,27 @@
 // imports
-importScripts('js/sw-utils.js');
-// NAMES
-const STATIC_CACHE = 'static-v1';
+importScripts('/js/sw-utils.js');
+
+const STATIC_CACHE = 'static-v3';
 const INMUTABLE_CACHE = 'inmutable-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 
 const APP_SHELL = [
-  // '/', // En desarrollo
-  '/pwa-prueba/',
-  '/pwa-prueba/css/style.css',
-  '/pwa-prueba/img/favicon.ico',
-  '/pwa-prueba/img/avatars/spiderman.jpg',
-  '/pwa-prueba/img/avatars/hulk.jpg',
-  '/pwa-prueba/img/avatars/wolverine.jpg',
-  '/pwa-prueba/img/avatars/thor.jpg',
-  '/pwa-prueba/img/avatars/ironman.jpg',
-  '/pwa-prueba/js/app.js',
-  '/pwa-prueba/js/sw-utils.js',
+  '/',
+  'index.html',
+  '/css/style.css',
+  '/img/favicon.ico',
+  '/img/avatars/spiderman.jpg',
+  '/img/avatars/hulk.jpg',
+  '/img/avatars/wolverine.jpg',
+  '/img/avatars/thor.jpg',
+  '/img/avatars/ironman.jpg',
+  '/js/app.js',
+  '/js/sw-utils.js',
 ];
 
 const APP_SHELL_INMUTABLE = [
-  '/pwa-prueba/js/libs/jquery.js',
-  '/pwa-prueba/css/animate.css',
+  '/js/libs/jquery.js',
+  '/css/animate.css',
   'https://fonts.googleapis.com/css?family=Quicksand:300,400',
   'https://fonts.googleapis.com/css?family=Lato:400,300',
   'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
@@ -31,9 +31,11 @@ self.addEventListener('install', (e) => {
   const staticCache = caches
     .open(STATIC_CACHE)
     .then((cache) => cache.addAll(APP_SHELL));
+
   const inmutableCache = caches
     .open(INMUTABLE_CACHE)
     .then((cache) => cache.addAll(APP_SHELL_INMUTABLE));
+
   e.waitUntil(Promise.all([staticCache, inmutableCache]));
 });
 

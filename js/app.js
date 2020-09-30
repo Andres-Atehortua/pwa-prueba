@@ -1,13 +1,5 @@
-const url = window.location.href;
-let swLocation = '/pwa-prueba/sw.js';
-
 // Registramos el sw
-// navigator.serviceWorker && navigator.serviceWorker.register('/sw.js');
-if (navigator.serviceWorker) {
-  url.includes('localhost') && (swLocation = '/sw.js');
-
-  navigator.serviceWorker.register(swLocation);
-}
+navigator.serviceWorker && navigator.serviceWorker.register('/sw.js');
 
 // Referencias de jQuery
 
